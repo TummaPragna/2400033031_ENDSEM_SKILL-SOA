@@ -1,0 +1,37 @@
+
+---
+openapi: 3.0.3
+
+info:
+  title: Addition Service Contract
+  description: GET endpoint contract for addition service
+  version: "1.0"
+
+paths:
+  /ms1/add:
+    get:
+      summary: Add two numbers
+
+      parameters:
+        - name: a
+          in: query
+          required: true
+          schema:
+            type: integer
+          example: 5
+
+        - name: b
+          in: query
+          required: true
+          schema:
+            type: integer
+          example: 10
+
+      responses:
+        "200":
+          description: Successful addition
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "MS 1.1 - Addition = 15"
